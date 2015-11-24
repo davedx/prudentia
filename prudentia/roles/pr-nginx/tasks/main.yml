@@ -3,7 +3,7 @@
 
   - name: Nginx | Generate self-signed certificate
     include: '{{prudentia_dir}}/tasks/ssl-self-certificate.yml fqdn="{{ssl_key_fqdn}}" key="{{ssl_key_name}}" crt="{{ssl_cert_name}}" target_dir="{{ssl_install_path}}"'
-    when: option_ssl
+    when: option_ssl and option_ssl_self_signed
     tags:
       - nginx
 
